@@ -37,6 +37,22 @@ document.addEventListener('DOMContentLoaded', function() {
             alert('Thank you for your message! We will contact you soon.');
             this.reset();
         });
+// Carrusel Automático
+document.addEventListener('DOMContentLoaded', function() {
+    const slider = document.querySelector('.slider');
+    
+    if (slider) {
+        // Cambia de imagen cada 3.5 segundos (3500 milisegundos)
+        setInterval(function() {
+            // Verifica si llegó al final del carrusel
+            if (slider.scrollLeft + slider.clientWidth >= slider.scrollWidth - 10) {
+                // Regresa a la primera foto
+                slider.scrollTo({ left: 0, behavior: 'smooth' });
+            } else {
+                // Avanza a la siguiente foto
+                slider.scrollBy({ left: slider.clientWidth, behavior: 'smooth' });
+            }
+        }, 3500); 
     }
 });
 
