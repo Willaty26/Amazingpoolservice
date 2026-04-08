@@ -72,6 +72,8 @@ header {
 nav ul {
     display: flex;
     list-style: none;
+    flex-wrap: wrap; 
+    justify-content: center;
 }
 
 nav ul li {
